@@ -1,27 +1,14 @@
-# VehicleUi
+When you have set canDeativete return value false you are not switching another router until it’s set true.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+ canDeactivate(): Promise<any> | boolean {
+    const confirmResult = confirm('Are you sure you want to leave this page ? ');
+    if (confirmResult === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Trying to move home page it’s show confirm popup as below. If you select OK will move to home otherwise your in same page only. 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
