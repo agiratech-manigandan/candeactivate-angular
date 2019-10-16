@@ -1,0 +1,93 @@
+@import '~@angular/material/theming';
+@include mat-core();
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+$mat-blue: (
+  50: #e7e5ec,
+  100: #c3bece,
+  200: #9b93ae,
+  300: #72688e,
+  400: #544775,
+  500: #36275d,
+  600: #302355,
+  700: #291d4b,
+  800: #221741,
+  900: #160e30,
+  A100: #8c6dff,
+  A200: #643aff,
+  A400: #3c07ff,
+  A700: #3300ec,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$md-mcgpalette0: (
+    50 : #edf8e9,
+    100 : #d3edc9,
+    200 : #b6e1a5,
+    300 : #99d481,
+    400 : #83cb66,
+    500 : #6dc24b,
+    600 : #65bc44,
+    700 : #5ab43b,
+    800 : #50ac33,
+    900 : #3e9f23,
+    A100 : #e3ffdc,
+    A200 : #baffa9,
+    A400 : #90ff76,
+    A700 : #7cff5d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$my-app-primary: mat-palette($mat-blue);
+$my-app-accent:  mat-palette($md-mcgpalette0, 900, 700, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+:root{
+  --primary: #291d4b;
+  --secondary: #5ab43b;
+  --high-emphasis: rgba(0,0,0,0.87);
+  --medium-emphasis: rgba(0,0,0,0.6);
+  --low-emphasis: rgba(0,0,0,0.38);
+  --lower-emphasis: rgba(0,0,0,0.1);
+}
